@@ -1,0 +1,24 @@
+input_features:
+  -
+    name: text
+    type: sequence
+    encoder: bert
+    config_path: ./uncased_L-12_H-768_A-12/bert_config.json
+    checkpoint_path: ./uncased_L-12_H-768_A-12/bert_model.ckpt
+    do_lower_case: True
+    preprocessing:
+        tokenizer: bert
+        vocab_file: ./uncased_L-12_H-768_A-12/vocab.txt
+        padding_symbol: '[PAD]'
+        unknown_symbol: '[UNK]'
+    reduce_output: True
+  
+output_features:
+  -
+    name: label
+    type: category
+  
+training:
+  epochs: 100
+
+  

@@ -1,0 +1,19 @@
+
+input_features:
+  -
+    name: text
+    type: text
+    preprocessing:
+      lowercase: true
+      word_tokenizer: space
+      tokenizer: lemmatize_remove_stopwords
+    level: word
+    encoder: parallel_cnn
+
+output_features:
+  -
+    name: label
+    type: category
+
+training:
+  epochs: 100

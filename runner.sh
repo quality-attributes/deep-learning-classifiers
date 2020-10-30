@@ -1,0 +1,1 @@
+ludwig train --model_definition_file=model_definition.yaml --data_csv=datasets/quality_attributes.csv --output_directory=results --comet
