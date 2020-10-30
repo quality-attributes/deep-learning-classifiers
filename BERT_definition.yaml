@@ -2,12 +2,15 @@ input_features:
   -
     name: text
     type: text
-    level: word
     encoder: bert
-    tied_weights: null
-    pretrained_model_name_or_path: ./uncased_L-12_H-768_A-12/bert_config.json
-    reduced_output: cls_pooled
-    trainable: false
+    config_path: ./uncased_L-12_H-768_A-12/bert_config.json
+    checkpoint_path: ./uncased_L-12_H-768_A-12/bert_model.ckpt
+    do_lower_case: True
+    preprocessing:
+        word_tokenizer: bert
+        vocab_file: ./uncased_L-12_H-768_A-12/vocab.txt
+        padding_symbol: '[PAD]'
+        unknown_symbol: '[UNK]'
   
 output_features:
   -
